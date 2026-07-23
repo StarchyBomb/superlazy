@@ -13,7 +13,7 @@ No `✅` without fresh verification evidence from THIS turn. A claim without a j
 ## Gate (run silently before every claim)
 1. What command proves the claim? (tests / build / lint / running the code / re-testing the original bug symptom). Narrowest command that proves it — full suite only when the claim IS "all tests pass". UI/visual claim → screenshot or rendered-page check, not "the code looks right".
 2. Run that command fresh, to completion.
-3. Read the output: exit code, failure count, warnings.
+3. Read the output: exit code, failure count, warnings. Large test/build log → pipe to a quiet/summary flag or grep for the pass/fail line and any failure names first; pull a full stack trace only for a failure you're about to fix. Never let a full raw log flow into context out of habit — that's the same "bulk data → script that prints only the answer" rule as everywhere else.
 4. Output confirms → `✅ <claim>`. Doesn't → fix, or report actual state as one-line `❌`. Never hide or soften a failure.
 
 ## Traps

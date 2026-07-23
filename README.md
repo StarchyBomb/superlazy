@@ -4,7 +4,7 @@
 
 Your AI writes essays about your code. You read none of them. You pay for all of them.
 
-**superlazy** = 11 Claude Code skills. Full discipline (TDD, root-cause debugging, verification), zero narration. Distilled from [superpowers](https://github.com/obra/superpowers) + [anthropics/skills](https://github.com/anthropics/skills), then starved of tokens until only the useful parts survived.
+**superlazy** = 12 Claude Code skills. Full discipline (TDD, root-cause debugging, verification), zero narration. Distilled from [superpowers](https://github.com/obra/superpowers) + [anthropics/skills](https://github.com/anthropics/skills), then starved of tokens until only the useful parts survived.
 
 ## Measured, not imagined
 
@@ -42,9 +42,13 @@ That's the whole tutorial. Manual people: clone and dump `skills/*` into `~/.cla
 
 ## What's inside
 
-`superlazy` (the vow of silence) · `-tdd` · `-debug` · `-plan` · `-review` · `-verify` · `-worktree` · `-subagents` · `-skill-creator` · `-mcp` · `-context` (index + on-demand retrieval for large docs)
+`superlazy` (the vow of silence) · `-tdd` · `-debug` · `-plan` · `-review` · `-verify` · `-worktree` · `-subagents` · `-skill-creator` · `-mcp` · `-context` (index + on-demand retrieval for large docs) · `ultralazy` (all of the above stacked, plus filtered verify output — the whole plugin as one skill)
 
 Each one: output ≤3 lines — blocking questions, stuff only you can do, and a final `✅`/`❌`. Everything else is `git diff`'s job.
+
+## What a skill can't touch
+
+Real cost levers exist outside what a skill's text can control — prompt-cache placement, the model's thinking/effort budget, server-side compaction — because those are request parameters the harness sets, not something a `SKILL.md` can request. `ultralazy` says so explicitly instead of quietly claiming credit for savings it didn't cause.
 
 ## FAQ
 
