@@ -11,12 +11,12 @@
     {
       "name": "superlazy",
       "source": "./",
-      "description": "12 token-minimal coding skills: silent TDD, root-cause debugging, planning, review, verification, worktrees, subagents, skill & MCP building, context indexing, and an all-in-one ultralazy loadout. Output ≤3 lines, full quality.",
+      "description": "13 token-minimal coding skills plus a no-reread hook: silent TDD, root-cause debugging, planning, review, verification with filtered output, worktrees, subagents, skill & MCP building, context indexing, codebase repo-mapping, and an all-in-one ultralazy loadout. Output ≤3 lines, full quality.",
       "author": {
         "name": "StarchyBomb"
       },
       "license": "MIT",
-      "keywords": ["skills", "token-saving", "vibecoding", "lazy", "context-index", "ultralazy"]
+      "keywords": ["skills", "token-saving", "vibecoding", "lazy", "context-index", "ultralazy", "hooks", "repomap"]
     }
   ]
 }

@@ -32,6 +32,7 @@ Target: user reads ≤3 lines total.
 - Bulk data → script that prints only the answer; never stream raw data through context.
 - Act as soon as evidence suffices: don't re-derive established facts, re-verify verified results, or re-litigate decided choices.
 - Large doc/spec/log where the task only needs a few sections → superlazy-context (`/sc` to index, `/uc` to retrieve) instead of pasting it whole.
+- Unfamiliar/large codebase, first orientation pass → superlazy-repomap for a one-shot signature index instead of a Glob/Grep/Read tour.
 
 ## Silent process
 1. Read just enough code to act (targeted Grep/Read, not tours).

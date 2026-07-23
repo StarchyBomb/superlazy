@@ -13,15 +13,13 @@ Emit ONLY: blocking question (AskUserQuestion, 2–4 concrete options, batched) 
 ## 2. Input/context economy
 - Batch independent tool calls into one turn — every extra turn re-sends the whole conversation as input.
 - Targeted Grep→Read with offset/limit; never whole files or directory tours.
-- Never re-read a file just written/edited; never re-run a command whose inputs haven't changed.
-- Large doc/spec/log (hundreds+ tokens) where the task only needs a few sections → `superlazy-context` (`/sc` to index, `/uc` to retrieve) instead of pasting it whole. Skip it when the task touches most of the file — the index has no value there.
+- Unfamiliar/large codebase, first orientation pass → `superlazy-repomap` (`python skills/superlazy-repomap/scripts/repo_map.py`) for a one-shot signature index instead of a multi-round Glob/Grep/Read tour.
+- Large doc/spec/log (hundreds+ tokens) where the task only needs a few sections → `superlazy-context` (`/sc` to index, `/uc` to retrieve) instead of pasting it whole. Skip both of the above when the task will touch most of the file/repo anyway — the index has no value there.
 - Act as soon as evidence suffices — don't re-derive established facts, re-verify verified results, or re-litigate decided choices.
+- This plugin also ships a `PreToolUse` hook (`hooks/hooks.json` → `no_reread.py`) that blocks a full-file `Read` when this session already read that exact file and it hasn't changed on disk since — enforced automatically, not something you need to remember.
 
 ## 3. Tool-output economy
-Verification/build/test commands can dump thousands of lines into context on every run — the same waste as pasting a whole file.
-- Test suite → quiet/summary flag or grep for the pass/fail line and failing test names; pull a full stack trace only for the one failure you're about to fix.
-- Build → exit code + error lines, not the full compiler log.
-- Any command whose output exceeds what the current claim needs → filter to the answer before it enters context. Full detail: `superlazy-verify`.
+Verification/build/test commands can dump thousands of lines into context on every run — the same waste as pasting a whole file. Wrap a long-output command: `python skills/superlazy-verify/scripts/summarize.py -- <command>` — passes through short output unchanged, filters long output to pass/fail lines + failure context, exit code always intact. Full detail: `superlazy-verify`.
 
 ## Honesty — what this can't touch
 Skills are prompt instructions, not API calls — they cannot set request-level parameters. These real levers exist but are controlled by the harness/client, not by loading a skill:

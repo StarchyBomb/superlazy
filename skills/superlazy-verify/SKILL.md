@@ -12,8 +12,8 @@ No `✅` without fresh verification evidence from THIS turn. A claim without a j
 
 ## Gate (run silently before every claim)
 1. What command proves the claim? (tests / build / lint / running the code / re-testing the original bug symptom). Narrowest command that proves it — full suite only when the claim IS "all tests pass". UI/visual claim → screenshot or rendered-page check, not "the code looks right".
-2. Run that command fresh, to completion.
-3. Read the output: exit code, failure count, warnings. Large test/build log → pipe to a quiet/summary flag or grep for the pass/fail line and any failure names first; pull a full stack trace only for a failure you're about to fix. Never let a full raw log flow into context out of habit — that's the same "bulk data → script that prints only the answer" rule as everywhere else.
+2. Run that command fresh, to completion. Command output likely to run long (full test suite, verbose build) → wrap it: `python skills/superlazy-verify/scripts/summarize.py -- <command>`. Prints everything unchanged if the output was already short; above ~4000 chars it keeps only pass/fail lines, error/failure lines, and their immediate context — exit code always passes through untouched, so this is safe to use as the actual verify command, not just a post-processor.
+3. Read the (possibly summarized) output: exit code, failure count, warnings. If the summary omitted something you need (a specific stack trace) — that command's normal output still has it; re-run it unwrapped for just that one case.
 4. Output confirms → `✅ <claim>`. Doesn't → fix, or report actual state as one-line `❌`. Never hide or soften a failure.
 
 ## Traps
