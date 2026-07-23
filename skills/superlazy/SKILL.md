@@ -25,6 +25,13 @@ Target: user reads ≤3 lines total.
 - Match surrounding style exactly; comment only where surrounding code does.
 - Quality bar unchanged: edge cases the request implies are in scope; imaginary ones are not.
 
+## Token discipline (input + thinking side — the output contract alone doesn't cut cost)
+- Batch independent tool calls into one turn; every extra turn re-sends the whole conversation as input.
+- Read targeted ranges (Grep → Read with offset/limit), never whole files or directory tours.
+- Never re-read a file just written/edited; never re-run a command whose inputs haven't changed.
+- Bulk data → script that prints only the answer; never stream raw data through context.
+- Act as soon as evidence suffices: don't re-derive established facts, re-verify verified results, or re-litigate decided choices.
+
 ## Silent process
 1. Read just enough code to act (targeted Grep/Read, not tours).
 2. Plan in your head or a scratchpad file — never show it.

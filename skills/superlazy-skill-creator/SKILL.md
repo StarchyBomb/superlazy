@@ -16,7 +16,7 @@ skill-name/
 Progressive disclosure: description always in context (~100 words) → body loads on trigger → resources load on demand. Push bulk content DOWN a level; scripts execute without being read.
 
 ## Token rules (this is the skill's whole point)
-- **description** carries ALL triggering info — what it does + when to use, phrased "pushy" (models undertrigger): list concrete user phrases/contexts that must trigger it.
+- **name**: lowercase-hyphen, ≤64 chars. **description**: third person, ≤1024 chars — carries ALL triggering info: what it does + when to use, phrased "pushy" (models undertrigger); list concrete user phrases/contexts that must trigger it, and anti-triggers ("Do NOT use for…") if adjacent skills overlap.
 - Body budget ≤100 lines: every line must change model behavior. Delete rationale, motivation, examples that restate rules, tables that repeat prose. Imperative voice only.
 - One rule stated once. If you write "in other words" — delete the sentence before it.
 - If the skill makes the model produce user-facing output, embed the superlazy output contract line in it.

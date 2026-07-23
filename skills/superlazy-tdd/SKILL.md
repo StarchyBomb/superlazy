@@ -14,9 +14,10 @@ Project has test infra → no production code without a failing test first. No t
 1. **RED** — write ONE minimal test for the behavior: clear name, real code (mocks only if unavoidable), one assertion focus. Wished-for API is allowed.
 2. **Verify RED** — run it. Must FAIL for the right reason (feature missing, not typo/error). Passes immediately = it tests nothing; fix the test.
 3. **GREEN** — simplest code that passes. No extra features, options, or "improvements" beyond the test.
-4. **Verify GREEN** — run test + suite. All pass, output clean. Test fails → fix code, not test.
+4. **Verify GREEN** — run the new test + narrowest affected scope (single file/module). All pass, output clean. Test fails → fix code, not test.
 5. **REFACTOR** — only if it deletes lines or duplication. Stay green.
 6. Repeat per behavior. Bug fix = failing test reproducing the bug first, always.
+7. **Task end** — full suite once. Per-cycle full-suite runs waste tokens and time.
 
 ## Cut points (lazy but honest)
 - One test per behavior the request implies — not per imaginary edge case.

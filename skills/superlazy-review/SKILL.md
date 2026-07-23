@@ -9,6 +9,7 @@ SUPERLAZY mode: output ≤3 lines (questions / user-actions / ✅❌); minimal c
 
 ## Self-review (always, before ✅)
 Read the final diff once. Delete anything the request didn't require. Every surviving line must justify itself.
+Sweep for: debug prints/logging left behind, commented-out code, stray TODOs, accidental file additions, secrets/keys in the diff.
 
 ## Requesting review (large or risky diffs only)
 - Dispatch ONE reviewer subagent. Hand it the diff as a FILE (`git diff BASE..HEAD > file`), plus a one-line description and the requirements — never your session history.

@@ -17,5 +17,6 @@ SUPERLAZY mode: output ≤3 lines (questions / user-actions / ✅❌); minimal c
 - Read the plan once, question it critically — contradictions or gaps → ONE batched blocking question before starting, not per-discovery interrupts.
 - Execute every task in order without pausing to ask "continue?". Follow steps exactly; run every verification listed.
 - Stop ONLY for: real blocker, genuinely ambiguous instruction, or all tasks done. Blocked → one-line question; done → `✅`.
+- Work spanning sessions → append per-task status to `.superlazy/progress.md` (same ledger as superlazy-subagents); trust ledger + `git log` over memory after compaction.
 - Independent tasks + subagent support available → prefer superlazy-subagents.
 - Never start on main/master without explicit user consent (see superlazy-worktree).

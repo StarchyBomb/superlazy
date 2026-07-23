@@ -16,7 +16,7 @@ SUPERLAZY mode: output ≤3 lines (questions / user-actions / ✅❌); minimal c
 - Comprehensive API coverage first; workflow-convenience tools only when the API composition is genuinely painful.
 - Names: `service_verb_noun` (`github_create_issue`). Action-oriented, consistent prefix.
 - Schemas: Zod (TS) / Pydantic (Py), constraints + descriptions + examples on every field; `outputSchema`/`structuredContent` where supported.
-- Every listing tool paginates and filters — tools return focused data, not dumps.
+- Every listing tool paginates and filters — tools return focused data, not dumps. Small default page size (~20); concise text content, big payloads in `structuredContent` only, never duplicated as prose.
 - Errors are actionable: what failed + what the agent should do next.
 - Annotations on every tool: `readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`.
 - Shared infra once: API client + auth, error helper, response formatter. DRY.

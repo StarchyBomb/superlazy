@@ -11,7 +11,7 @@ SUPERLAZY mode: output ≤3 lines (questions / user-actions / ✅❌); minimal c
 No fix without root cause. Symptom patches are failure — and cost more tokens later.
 
 ## Silent process
-1. **Evidence first** — read the FULL error/stack trace (it often contains the answer), reproduce reliably, check recent changes (`git diff`, new deps, config).
+1. **Evidence first** — read the FULL error/stack trace (it often contains the answer), reproduce with the SMALLEST command (one failing test, not the suite), check recent changes (`git diff`, new deps, config). Regression with a known-good commit → `git bisect run <cmd>` beats reading code.
 2. **Trace to origin** — bad value deep in the stack? Trace backward: who produced it, who called that, until the source. Fix at the source, never where it crashed. Multi-component systems: log data at each boundary once, find the failing layer, then dig there.
 3. **One hypothesis, one change** — state it to yourself ("X causes this because Y"), make the SMALLEST change that tests it. Never stack multiple fixes.
 4. **Fix via test** — write a failing test reproducing the bug (superlazy-tdd), implement the single root-cause fix, verify test + suite green. No "while I'm here" extras.

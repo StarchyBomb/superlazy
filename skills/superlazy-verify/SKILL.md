@@ -11,8 +11,8 @@ SUPERLAZY mode: output ≤3 lines (questions / user-actions / ✅❌); minimal c
 No `✅` without fresh verification evidence from THIS turn. A claim without a just-run command is a lie, not a summary.
 
 ## Gate (run silently before every claim)
-1. What command proves the claim? (tests / build / lint / running the code / re-testing the original bug symptom)
-2. Run the FULL command, fresh.
+1. What command proves the claim? (tests / build / lint / running the code / re-testing the original bug symptom). Narrowest command that proves it — full suite only when the claim IS "all tests pass". UI/visual claim → screenshot or rendered-page check, not "the code looks right".
+2. Run that command fresh, to completion.
 3. Read the output: exit code, failure count, warnings.
 4. Output confirms → `✅ <claim>`. Doesn't → fix, or report actual state as one-line `❌`. Never hide or soften a failure.
 

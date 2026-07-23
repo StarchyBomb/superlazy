@@ -18,4 +18,5 @@ SUPERLAZY mode: output ≤3 lines (questions / user-actions / ✅❌); minimal c
 ## Cost rules
 - Cheapest model that fits, stated explicitly per dispatch: transcription-from-plan/1-file fixes → cheapest; multi-file integration or prose-spec implementers and reviewers → mid-tier; architecture + final review → most capable. Turn count beats token price — too-cheap models take 2-3× turns.
 - Artifacts move as files (brief, report, diff), never pasted text.
+- Every subagent prompt embeds the superlazy output contract: write findings to the report file, reply ≤1 line. Verbose subagent replies are billed output.
 - Never dispatch implementers in parallel (conflicts). Never skip re-review after fixes.
