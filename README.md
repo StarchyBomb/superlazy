@@ -4,7 +4,7 @@
 
 Your AI writes essays about your code. You read none of them. You pay for all of them.
 
-**superlazy** = 12 Claude Code skills. Full discipline (TDD, root-cause debugging, verification), zero narration. Distilled from [superpowers](https://github.com/obra/superpowers) + [anthropics/skills](https://github.com/anthropics/skills), then starved of tokens until only the useful parts survived.
+**superlazy** = 13 Claude Code skills + 1 hook. Full discipline (TDD, root-cause debugging, verification), zero narration. Distilled from [superpowers](https://github.com/obra/superpowers) + [anthropics/skills](https://github.com/anthropics/skills), then starved of tokens until only the useful parts survived.
 
 ## Measured, not imagined
 
@@ -42,13 +42,19 @@ That's the whole tutorial. Manual people: clone and dump `skills/*` into `~/.cla
 
 ## What's inside
 
-`superlazy` (the vow of silence) · `-tdd` · `-debug` · `-plan` · `-review` · `-verify` · `-worktree` · `-subagents` · `-skill-creator` · `-mcp` · `-context` (index + on-demand retrieval for large docs) · `ultralazy` (all of the above stacked, plus filtered verify output — the whole plugin as one skill)
+`superlazy` (the vow of silence) · `-tdd` · `-debug` · `-plan` · `-review` · `-verify` · `-worktree` · `-subagents` · `-skill-creator` · `-mcp` · `-context` (index + on-demand retrieval for large docs) · `-repomap` (one-shot codebase signature index) · `ultralazy` (all of the above stacked)
 
 Each one: output ≤3 lines — blocking questions, stuff only you can do, and a final `✅`/`❌`. Everything else is `git diff`'s job.
 
+## Not just prompts
+
+Two pieces of this aren't skill text hoping the model remembers — they're code that runs:
+- **`hooks/hooks.json`** — a `PreToolUse` hook that hard-blocks a `Read` of a file this session already read in full, unchanged on disk since. Active automatically once the plugin is installed, not something you have to invoke.
+- **`skills/superlazy-verify/scripts/summarize.py`** — wraps a test/build command and filters long output to pass/fail lines + failure context, exit code intact.
+
 ## What a skill can't touch
 
-Real cost levers exist outside what a skill's text can control — prompt-cache placement, the model's thinking/effort budget, server-side compaction — because those are request parameters the harness sets, not something a `SKILL.md` can request. `ultralazy` says so explicitly instead of quietly claiming credit for savings it didn't cause.
+Real cost levers exist outside what a skill's text (or even a hook) can control — prompt-cache placement, the model's thinking/effort budget, server-side compaction — because those are request parameters the harness sets. `ultralazy` says so explicitly instead of quietly claiming credit for savings it didn't cause.
 
 ## FAQ
 
