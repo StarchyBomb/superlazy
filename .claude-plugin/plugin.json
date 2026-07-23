@@ -1,0 +1,12 @@
+{
+  "name": "superlazy",
+  "description": "Token-minimal coding skills: same quality, minimum code, near-zero yapping. Output ≤3 lines. Lazy = fewer lines, never less done.",
+  "version": "1.0.0",
+  "author": {
+    "name": "StarchyBomb"
+  },
+  "homepage": "https://github.com/StarchyBomb/superlazy",
+  "repository": "https://github.com/StarchyBomb/superlazy",
+  "license": "MIT",
+  "keywords": ["skills", "token-saving", "tdd", "debugging", "vibecoding", "lazy"]
+}

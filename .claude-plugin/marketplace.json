@@ -1,0 +1,22 @@
+{
+  "name": "superlazy",
+  "owner": {
+    "name": "StarchyBomb"
+  },
+  "metadata": {
+    "description": "The superlazy skill marketplace. One plugin. It does not want to talk about it.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "superlazy",
+      "source": "./",
+      "description": "10 token-minimal coding skills: silent TDD, root-cause debugging, planning, review, verification, worktrees, subagents, skill & MCP building. Output ≤3 lines, full quality.",
+      "author": {
+        "name": "StarchyBomb"
+      },
+      "license": "MIT",
+      "keywords": ["skills", "token-saving", "vibecoding", "lazy"]
+    }
+  ]
+}
