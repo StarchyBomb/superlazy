@@ -4,7 +4,7 @@
 
 Your AI writes essays about your code. You read none of them. You pay for all of them.
 
-**superlazy** = 10 Claude Code skills. Full discipline (TDD, root-cause debugging, verification), zero narration. Distilled from [superpowers](https://github.com/obra/superpowers) + [anthropics/skills](https://github.com/anthropics/skills), then starved of tokens until only the useful parts survived.
+**superlazy** = 12 Claude Code skills. Full discipline (TDD, root-cause debugging, verification), zero narration. Distilled from [superpowers](https://github.com/obra/superpowers) + [anthropics/skills](https://github.com/anthropics/skills), then starved of tokens until only the useful parts survived.
 
 ## Measured, not imagined
 
@@ -23,8 +23,8 @@ One real A/B run ([full methodology + caveats](BENCHMARK.md)): identical project
 
 ## What it saves — and what it doesn't
 
-- ✅ **Output tokens** (the narration you never read) — the only thing this can touch. Roughly half in the run above, not 400×.
-- ❌ **Input/context tokens** — unchanged. If your agent re-reads the repo every turn, that's your bill's biggest line and this doesn't fix it.
+- ✅ **Output tokens** (the narration you never read) — the core skill's job. Roughly half in the run above, not 400×.
+- ✅ **Input/context tokens, but only for large docs read in part** — `superlazy-context` (adapted from [supercontexter](https://github.com/StarchyBomb/supercontexter)) indexes a big file once and retrieves exact sections on demand instead of pasting it whole. Doesn't touch your repo's source files — if your agent re-reads those every turn, that's still your bill's biggest line.
 - ❌ **Thinking tokens** — billed in full whether or not anything is printed. A silent model still thinks at full price.
 
 Lazy, not dishonest.
@@ -42,9 +42,13 @@ That's the whole tutorial. Manual people: clone and dump `skills/*` into `~/.cla
 
 ## What's inside
 
-`superlazy` (the vow of silence) · `-tdd` · `-debug` · `-plan` · `-review` · `-verify` · `-worktree` · `-subagents` · `-skill-creator` · `-mcp`
+`superlazy` (the vow of silence) · `-tdd` · `-debug` · `-plan` · `-review` · `-verify` · `-worktree` · `-subagents` · `-skill-creator` · `-mcp` · `-context` (index + on-demand retrieval for large docs) · `ultralazy` (all of the above stacked, plus filtered verify output — the whole plugin as one skill)
 
 Each one: output ≤3 lines — blocking questions, stuff only you can do, and a final `✅`/`❌`. Everything else is `git diff`'s job.
+
+## What a skill can't touch
+
+Real cost levers exist outside what a skill's text can control — prompt-cache placement, the model's thinking/effort budget, server-side compaction — because those are request parameters the harness sets, not something a `SKILL.md` can request. `ultralazy` says so explicitly instead of quietly claiming credit for savings it didn't cause.
 
 ## FAQ
 
