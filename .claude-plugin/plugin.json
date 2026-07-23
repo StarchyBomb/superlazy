@@ -8,5 +8,5 @@
   "homepage": "https://github.com/StarchyBomb/superlazy",
   "repository": "https://github.com/StarchyBomb/superlazy",
   "license": "MIT",
-  "keywords": ["skills", "token-saving", "tdd", "debugging", "vibecoding", "lazy"]
+  "keywords": ["skills", "token-saving", "tdd", "debugging", "vibecoding", "lazy", "context-index"]
 }
