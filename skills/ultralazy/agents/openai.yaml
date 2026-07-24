@@ -1,0 +1,6 @@
+interface:
+  display_name: "Ultralazy"
+  short_description: "Maximum token-saving coding loadout"
+  default_prompt: "Use $ultralazy to minimize token cost while preserving code quality."
+policy:
+  allow_implicit_invocation: true

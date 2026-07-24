@@ -1,0 +1,6 @@
+interface:
+  display_name: "Superlazy Skill Creator"
+  short_description: "Minimal-token skill authoring"
+  default_prompt: "Use $superlazy-skill-creator to improve this skill with minimal tokens."
+policy:
+  allow_implicit_invocation: true

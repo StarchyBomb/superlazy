@@ -1,0 +1,6 @@
+interface:
+  display_name: "Superlazy Verify"
+  short_description: "Evidence before completion claims"
+  default_prompt: "Use $superlazy-verify before claiming this task is done."
+policy:
+  allow_implicit_invocation: true

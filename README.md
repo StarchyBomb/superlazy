@@ -35,6 +35,20 @@ Lazy, not dishonest.
 
 ## Install
 
+### Codex / ChatGPT
+
+This repo is also Codex-plugin ready: `.codex-plugin/plugin.json` points Codex at `./skills/`, and each skill includes `agents/openai.yaml` UI metadata.
+
+For local/manual use, copy individual skill folders from `skills/` into your Codex skills directory:
+
+```bash
+cp -R skills/* ~/.codex/skills/
+```
+
+The Claude-only reread hook remains in `hooks/`; Codex support is skill-first.
+
+### Claude Code
+
 ```
 /plugin marketplace add StarchyBomb/superlazy
 ```

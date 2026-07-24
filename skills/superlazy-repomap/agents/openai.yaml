@@ -1,0 +1,6 @@
+interface:
+  display_name: "Superlazy Repo Map"
+  short_description: "One-shot codebase signature map"
+  default_prompt: "Use $superlazy-repomap to map this codebase before targeted reads."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Superlazy"
+  short_description: "Terse coding mode with full quality"
+  default_prompt: "Use $superlazy while making this code change with minimal user-facing output."
+policy:
+  allow_implicit_invocation: true

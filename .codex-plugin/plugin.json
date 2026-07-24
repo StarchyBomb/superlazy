@@ -1,0 +1,41 @@
+{
+  "name": "superlazy",
+  "version": "1.0.0",
+  "description": "Token-minimal coding skills for Codex and ChatGPT: terse user output, targeted context use, TDD, debugging, review, verification, repomaps, and context indexing.",
+  "author": {
+    "name": "StarchyBomb"
+  },
+  "homepage": "https://github.com/StarchyBomb/superlazy",
+  "repository": "https://github.com/StarchyBomb/superlazy",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "codex",
+    "chatgpt",
+    "token-saving",
+    "tdd",
+    "debugging",
+    "context-index",
+    "repomap"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Superlazy",
+    "shortDescription": "Token-minimal coding skills for Codex",
+    "longDescription": "Superlazy bundles coding skills that keep user-facing output terse while preserving quality disciplines such as TDD, root-cause debugging, review, verification, isolated worktrees, repo maps, and lossless context indexing.",
+    "developerName": "StarchyBomb",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Write",
+      "Code",
+      "Workflow"
+    ],
+    "websiteURL": "https://github.com/StarchyBomb/superlazy",
+    "defaultPrompt": [
+      "Use $superlazy while making this code change.",
+      "Use $ultralazy to minimize tokens while preserving quality.",
+      "Use $superlazy-context for this large spec."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

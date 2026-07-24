@@ -1,0 +1,6 @@
+interface:
+  display_name: "Superlazy TDD"
+  short_description: "Silent test-first implementation"
+  default_prompt: "Use $superlazy-tdd to implement this behavior test-first."
+policy:
+  allow_implicit_invocation: true

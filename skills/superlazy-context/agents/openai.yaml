@@ -1,0 +1,6 @@
+interface:
+  display_name: "Superlazy Context"
+  short_description: "Lossless large-file section retrieval"
+  default_prompt: "Use $superlazy-context to index this large file and retrieve only needed sections."
+policy:
+  allow_implicit_invocation: true

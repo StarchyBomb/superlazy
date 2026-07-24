@@ -1,0 +1,6 @@
+interface:
+  display_name: "Superlazy Review"
+  short_description: "Silent code review workflow"
+  default_prompt: "Use $superlazy-review to review this change before calling it done."
+policy:
+  allow_implicit_invocation: true
