@@ -6,6 +6,10 @@ Your AI writes essays about your code. You read none of them. You pay for all of
 
 **superlazy** = 13 Claude Code skills + 1 hook. Full discipline (TDD, root-cause debugging, verification), zero narration. Distilled from [superpowers](https://github.com/obra/superpowers) + [anthropics/skills](https://github.com/anthropics/skills), then starved of tokens until only the useful parts survived.
 
+<p align="center">
+  <img src="assets/demo.gif" alt="superlazy: baseline vs superlazy — slide the line" width="100%">
+</p>
+
 ## Measured, not imagined
 
 One real A/B run ([full methodology + caveats](BENCHMARK.md)): identical project, 3 planted bugs + 2 feature rounds, identical prompts, Sonnet 5.
